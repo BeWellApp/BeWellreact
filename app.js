@@ -8,6 +8,7 @@ const logger = require('morgan');
 const createError = require('http-errors');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const contentRouter = require('./routes/content');
 require("dotenv").config(); //
 
 app.use(logger('dev'));
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/', indexRouter);
+app.use('/api/content', contentRouter);
 app.use('/api/users', usersRouter);
 
 //*Connect to mongodb
