@@ -25,7 +25,8 @@ const getContents = (req, res) => {
 }
 
 const getSingleContent = (req, res) => {
-    Content.findById({ _id: req.params }, (err, content) => {
+    const { id } = req.params
+    Content.findById(id, (err, content) => {
         if (err) {
             console.log(err);
             return res.status(500).send("error in server")
