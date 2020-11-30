@@ -25,7 +25,7 @@ export default function App() {
         <Stack.Screen name="SelectAge" component={SelectAge} />
         <Stack.Screen name="SelectLan" component={SelectLan} />
         <Stack.Screen name="Splash" component={Splash} />
-        <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Screen name="Welcome" component={Welcome} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );
