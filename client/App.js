@@ -10,24 +10,35 @@ import SelectAge from './screens/SelectAge';
 import SelectLan from './screens/SelectLan';
 import Splash from './screens/Splash';
 import Welcome from './screens/Welcome';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Temporary" component={Temporary} />
-        <Stack.Screen name="BodyInfo" component={BodyInfo} />
-        <Stack.Screen name="ConversationMenu" component={ConversationMenu} />
-        <Stack.Screen name="MainMenu" component={MainMenu} />
-        <Stack.Screen name="ProtectYourself" component={ProtectYourself} />
-        <Stack.Screen name="SelectAge" component={SelectAge} />
-        <Stack.Screen name="SelectLan" component={SelectLan} />
-        <Stack.Screen name="Splash" component={Splash} />
-        <Stack.Screen name="Welcome" component={Welcome} /> 
-      </Stack.Navigator>
+      <Drawer.Navigator initialRouteName="close">
+        <Drawer.Screen name="FeSelectAge" component={SelectAge} />
+        <Drawer.Screen name="SelectLan" component={SelectLan} />
+        <Drawer.Screen name="close" component={MyStack} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
 
+function MyStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Temporary" component={Temporary} />
+      <Stack.Screen name="BodyInfo" component={BodyInfo} />
+      <Stack.Screen name="ConversationMenu" component={ConversationMenu} />
+      <Stack.Screen name="MainMenu" component={MainMenu} />
+      <Stack.Screen name="ProtectYourself" component={ProtectYourself} />
+      <Stack.Screen name="SelectAge" component={SelectAge} />
+      <Stack.Screen name="SelectLan" component={SelectLan} />
+      <Stack.Screen name="Splash" component={Splash} options={{headerShown:false}}/>
+      <Stack.Screen name="Welcome" component={Welcome} />
+    </Stack.Navigator>
+  );
+}

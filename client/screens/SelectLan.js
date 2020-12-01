@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text,Button} from 'react-native';
 import BackButton from '../components/BackButton';
 import NextButton from '../components/NextButton';
 
@@ -21,6 +21,8 @@ export default function SelectLan({ navigation }) {
             <BackButton onPress={() => {navigation.navigate("Splash") }} size={0.1}/>
             </View>
             </View>
+            <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} />
+
         </View>
     )
 }
