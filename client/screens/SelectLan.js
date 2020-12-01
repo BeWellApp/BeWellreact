@@ -1,4 +1,3 @@
-
 import BackButton from '../components/BackButton';
 import NextButton from '../components/NextButton';
 import React, { useState } from 'react';
@@ -55,6 +54,14 @@ export default function SelectLan({ navigation }) {
 
                 </View>
             </View>
+<<<<<<< HEAD
+            <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} />
+<<<<<<< HEAD
+
+=======
+>>>>>>> a725aa5fc01bd23c419ba34bee2054ce494f334b
+=======
+>>>>>>> bf39287a9e931145136956e4fde2d1ceb5286901
         </View>
     )
 }
