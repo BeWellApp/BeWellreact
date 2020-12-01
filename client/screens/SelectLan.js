@@ -10,22 +10,22 @@ import TigreniaRecording from '../assets/sounds/tigrenia_recording.mp3';
 
 export default function SelectLan({ navigation }) {
     const [boolState, setState] = useState(true);
-  
+
     const clickHandler = () => {
-      setState(false);
+        setState(false);
     }
 
     return (
-        
-            <View>
+
+        <View style={styles.mainContainer}>
             <Text style={styles.boldText}> באיזו שפה תרצי לקבל מידע ?</Text>
             <View style={styles.buttonContainer}>
-            <View style={styles.rowContainer}><PlayButton audio={HebrewRecording} /><Button title='עברית' onPress={clickHandler}/></View>
-            <View style={styles.rowContainer}><PlayButton audio={AmharicRecording}/><Button title='አማርኛ' onPress={clickHandler}/></View>
-            <View style={styles.rowContainer}><PlayButton audio={TigreniaRecording}/><Button title='ትግርኛ' onPress={clickHandler}/></View>
-            <View style={styles.rowContainer}><PlayButton audio={ArabicRecording}/><Button title='عربيه' onPress={clickHandler}/></View>
-            <View style={styles.rowContainer}><PlayButton audio={RussianRecording}/><Button title='Rрусский' onPress={clickHandler}/></View>
-            <View style={styles.rowContainer}><PlayButton audio={EnglishRecording}/><Button title='English' onPress={clickHandler}/></View>
+                <View style={styles.rowContainer}><PlayButton audio={HebrewRecording} /><View style={styles.button}><Button  title='עברית' onPress={clickHandler} /></View></View>
+                <View style={styles.rowContainer}><PlayButton audio={AmharicRecording} /><View style={styles.button}><Button  title='አማርኛ' onPress={clickHandler} /></View></View>
+                <View style={styles.rowContainer}><PlayButton audio={TigreniaRecording} /><View style={styles.button}><Button  title='ትግርኛ' onPress={clickHandler} /></View></View>
+                <View style={styles.rowContainer}><PlayButton audio={ArabicRecording} /><View style={styles.button}><Button  title='عربيه' onPress={clickHandler} /></View></View>
+                <View style={styles.rowContainer}><PlayButton audio={RussianRecording} /><View style={styles.button}><Button  title='Rрусский' onPress={clickHandler} /></View></View>
+                <View style={styles.rowContainer}><PlayButton audio={EnglishRecording} /><View style={styles.button}><Button  title='English' onPress={clickHandler} /></View></View>
             </View>
 
             <View style={{
@@ -36,46 +36,56 @@ export default function SelectLan({ navigation }) {
                     flex: 1
                 }}>
 
-            <Button title='<' disabled={boolState} onPress={() => {navigation.navigate("Welcome")}} 
-            style={{
-                backgroundColor: "#FE434C",
-                borderColor: "transparent",
-                borderRadius: 20,
-                width: 250
-                 }}
-            textStyle={{ color: "#FFFFFF", fontSize: 100, fontWeight: '400' }}/>
+                    <Button title='<' disabled={boolState} onPress={() => { navigation.navigate("Welcome") }}
+                        style={{
+                            backgroundColor: "#FE434C",
+                            borderColor: "transparent",
+                            borderRadius: 20,
+                            width: 250
+                        }}
+                        textStyle={{ color: "#FFFFFF", fontSize: 100, fontWeight: '400' }} />
 
-            </View><View style={{
-                flex: 1
-            }}>
-                <Button title='>' onPress={() => {navigation.navigate("Splash")}} 
-            style={{
-                backgroundColor: "#FE434C",
-                borderColor: "transparent",
-                borderRadius: 20,
-                width: 250
-                 }}
-            textStyle={{ color: "#FFFFFF", fontSize: 100, fontWeight: '400' }}/>
-            
-            </View>
+                </View><View style={{
+                    flex: 1
+                }}>
+                    <Button title='>' onPress={() => { navigation.navigate("Splash") }}
+                        style={{
+                            backgroundColor: "#FE434C",
+                            borderColor: "transparent",
+                            borderRadius: 20,
+                            width: 250
+                        }}
+                        textStyle={{ color: "#FFFFFF", fontSize: 100, fontWeight: '400' }} />
+
+                </View>
             </View>
 
         </View>
     )
 }
 
-const styles = StyleSheet.create({   
+const styles = StyleSheet.create({
+    mainContainer: {
+        alignItems:'center'
+    },
     boldText: {
         fontWeight: 'bold',
         textAlign: 'center',
         fontSize: 20
-    },  
+    },
+    button: {
+        flex:1,
+        marginLeft:20
+    },
     buttonContainer: {
-        marginTop: 10,
+        marginVertical:20
     },
     rowContainer: {
-        flexDirection:'row',
-        justifyContent:'center'
+        marginVertical:10,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignContent: 'center',
+        width: 200
     }
-  });
-  
+});
+
