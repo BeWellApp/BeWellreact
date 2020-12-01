@@ -22,7 +22,7 @@ function App() {
         <Stack.Navigator>
           <Stack.Screen name="Temporary" component={Temporary} />
           <Stack.Screen name="BodyInfo" component={BodyInfo} />
-          <Stack.Screen name="איך לדבר על זה?" component={ConversationMenu} />
+          <Stack.Screen name="ConversationMenu" component={ConversationMenu} />
           <Stack.Screen name="MainMenu" component={MainMenu} />
           <Stack.Screen name="ProtectYourself" component={ProtectYourself} />
           <Stack.Screen name="SelectAge" component={SelectAge} />
