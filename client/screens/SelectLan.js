@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import PlayButton from '../components/PlayButton';
 import AmharicRecording from '../assets/sounds/amharic_recording.mp3';
 import ArabicRecording from '../assets/sounds/arabic_recording.mp3';
