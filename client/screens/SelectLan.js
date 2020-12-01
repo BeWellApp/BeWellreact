@@ -48,14 +48,7 @@ export default function SelectLan({ navigation }) {
                 </View><View style={{
                     flex: 1
                 }}>
-                    <Button title='>' onPress={() => { navigation.navigate("Splash") }}
-                        style={{
-                            backgroundColor: "#FE434C",
-                            borderColor: "transparent",
-                            borderRadius: 20,
-                            width: 250
-                        }}
-                        textStyle={{ color: "#FFFFFF", fontSize: 100, fontWeight: '400' }} />
+
 
                 </View>
             </View>
