@@ -9,8 +9,10 @@ import couple from '../assets/couple.png';
 import drandPatient from '../assets/drand_patient.png';
 import womanAndDaughter from '../assets/woman_and_daughter.png';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import BackButton from '../components/BackButton';
 
-export default function ConversationMenu() {
+
+export default function ConversationMenu({navigation}) {
     const data = [
         {
             title: 'איך לדבר עם אמך?',
@@ -32,6 +34,7 @@ export default function ConversationMenu() {
         <SafeAreaView style={styles.mainContainer}>
             <Text style={styles.title}>איך לדבר על זה?</Text>
             {data.map((item, index) => <MenuCardSimple key={index} title={item.title} imageSource={item.imageSource} audio={item.audio} />)}
+            <View><BackButton onPress={() => { navigation.navigate("MainMenu") }}/></View>
         </SafeAreaView>
     )
 }

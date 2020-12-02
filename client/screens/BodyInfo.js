@@ -7,9 +7,9 @@ import FaceRecording from '../assets/sounds/face.mp3';
 import MenstruationRecording from '../assets/sounds/menstruation.mp3';
 import OvariesRecording from '../assets/sounds/ovaries.mp3';
 import PlayButton from '../components/PlayButton';
+import BackButton from '../components/BackButton';
 
-
-export default function BodyInfo() {
+export default function BodyInfo({navigation}) {
     return (
         <View style={styles.logoContainer}>
         <ImageBackground resizeMode="contain" style={styles.logo} source={require('../assets/frontbodywoman.png')}/>  
@@ -18,12 +18,20 @@ export default function BodyInfo() {
         <View style={styles.playMenstruationContainer}><PlayButton audio={MenstruationRecording} /></View>
         <View style={styles.playCervixContainer}><PlayButton audio={CervixRecording} /></View>
         <View style={styles.playOvariesContainer}><PlayButton audio={OvariesRecording} /></View>
+        <View style={styles.backContainer}>
+        <BackButton onPress={() => { navigation.navigate("MainMenu") }} />
+      </View>
         </View>
     )
 }
 
 
 const styles = StyleSheet.create({
+    backContainer: {
+        position:"absolute",
+        bottom:"10%",
+        right:"45%"
+      },
     logoContainer: {
         flex:1,
         justifyContent:'center',

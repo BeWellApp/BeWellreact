@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import MenuCardSimple from '../components/MenuCardSimple';
 import frontBodyWoman from '../assets/frontbodywoman.png';
-import drandPatient from '../assets/drand_patient.png';
+import preventionImg from '../assets/prevention.png';
 import couple from '../assets/couple.png';
 import body from '../assets/sounds/body.mp3';
 import talkto from '../assets/sounds/talkto.mp3';
@@ -26,7 +26,7 @@ export default function MainMenu({navigation}) {
         },
         {
             title: 'איך תשמרי על עצמך?',
-            imageSource: drandPatient,
+            imageSource: preventionImg,
             audio: preservative,
             nextPage:'ProtectYourself'
 

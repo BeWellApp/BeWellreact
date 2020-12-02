@@ -11,15 +11,15 @@ export default function Welcome({ navigation }) {
     <View style={styles.container}>
       <ImageBackground resizeMode="contain" style={styles.logo} source={require('../assets/Logo.jpeg')} />
       <View style={{flexDirection:"row"}}>
+      <View style={styles.playContainer}><PlayButton color="white" audio={WelcomeRecording} /></View>
         <Text style={styles.boldText}>ברוכה הבאה ל'בריאה'!</Text>
-        <View style={styles.playContainer}><PlayButton color="white" audio={WelcomeRecording} /></View>
       </View>
       <View style={styles.body}>
-        <Text>באפליקציה זו תוכלי לקבל מידע אודות גופך ובריאותך
+        <Text enum='rtl'>באפליקציה זו תוכלי לקבל מידע אודות גופך ובריאותך
         הנשית ובהתאם לגילך.
       חשוב לציין, אפליקציה זו אינה מהווה תחליף להמלצות רפואיות שניתנו ע"י רופאה.</Text>
       </View>
-      <View>
+      <View style={styles.nextContainer}>
         <NextButton onPress={() => { navigation.navigate("SelectAge") }} />
       </View>
     </View>
@@ -31,6 +31,11 @@ export default function Welcome({ navigation }) {
 const styles = StyleSheet.create({
   playContainer: {
     marginHorizontal:10
+  },
+  nextContainer: {
+    position:"absolute",
+    bottom:"10%",
+    right:"45%"
   },
   container: {
     flex: 1,

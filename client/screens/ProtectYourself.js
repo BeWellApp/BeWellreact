@@ -7,8 +7,9 @@ import condomsAudio from '../assets/sounds/condoms.mp3';
 import condomImg from '../assets/condom.png';
 import pillsImg from '../assets/pills.png';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import BackButton from '../components/BackButton';
 
-export default function ProtectYourself() {
+export default function ProtectYourself({ navigation }) {
     const data = [
         {
             title: 'קונדומים',
@@ -25,6 +26,9 @@ export default function ProtectYourself() {
         <SafeAreaView style={styles.mainContainer}>
             <Text style={styles.title}>אמצעי מניעה</Text>
             {data.map((item, index) => <MenuCardSimple key={index} title={item.title} imageSource={item.imageSource} audio={item.audio} />)}
+            <View style={styles.nextContainer}>
+        <BackButton onPress={() => { navigation.navigate("MainMenu") }} />
+      </View>
         </SafeAreaView>
     )
 }

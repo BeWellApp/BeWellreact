@@ -1,5 +1,3 @@
-import BackButton from '../components/BackButton';
-import NextButton from '../components/NextButton';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import PlayButton from '../components/PlayButton';
@@ -58,7 +56,8 @@ const styles = StyleSheet.create({
     mainContainer: {
         alignItems:'center',
         justifyContent:'center',
-        flex:1
+        flex:1,
+        backgroundColor: '#fffff2'
     },
     boldText: {
         fontWeight: 'bold',
