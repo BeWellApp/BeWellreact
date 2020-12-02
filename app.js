@@ -24,7 +24,7 @@ app.use('/api/content', contentRouter);
 app.use('/api/users', usersRouter);
 
 //*Connect to mongodb
-const mongoUrl = process.env.SB_URL || "mongodb://localhost:27017/beWell";
+const mongoUrl = process.env.SB_URL || "mongodb+srv://Haktoon2020:BeWell2020@bewelldb.6z3sg.mongodb.net/BeWellDB?retryWrites=true&w=majority";
 
 mongoose.connect(mongoUrl, {
   useNewUrlParser: true, useUnifiedTopology: true
@@ -34,7 +34,7 @@ mongoose.connect(mongoUrl, {
     console.log("error connecting to db" + err.message);
   });
 
-const PORT = process.env.PORT | 4000
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log("listening on port" + PORT);
 })
