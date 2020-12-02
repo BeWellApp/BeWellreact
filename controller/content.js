@@ -13,10 +13,19 @@ const addContent = (req, res) => {
             destination = `Languege/Amharic/${body.age}/${fileName}`;
             break;
         case "he":
-            destination = `Languege/En/${body.age}/${fileName}`;
+            destination = `Languege/he/${body.age}/${fileName}`;
             break;
         case "en":
-            destination = `Languege/He/${body.age}/${fileName}`;
+            destination = `Languege/en/${body.age}/${fileName}`;
+            break;
+        case "ru":
+            destination = `Languege/ru/${body.age}/${fileName}`;
+            break;
+        case "ar":
+            destination = `Languege/ar/${body.age}/${fileName}`;
+            break;
+        case "te":
+            destination = `Languege/te/${body.age}/${fileName}`;
             break;
         default:
             break;

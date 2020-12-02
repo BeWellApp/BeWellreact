@@ -9,7 +9,7 @@ const createError = require('http-errors');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const contentRouter = require('./routes/content');
-require("dotenv").config(); //
+require("dotenv").config(); 
 
 const static = path.join(__dirname, 'static')
 app.use(logger('dev'));
