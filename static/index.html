@@ -10,14 +10,35 @@
 <body>
     <h1>Add Content</h1>
     <form action="/api/content" method="POST" enctype="multipart/form-data">
-        <label for="">lang</label>
-        <input type="text" name="lang" />
-        <label for="">age</label>
-        <input type="text" name="age" />
-        <label for="">category</label>
-        <input type="text" name="category" />
-        <label for="">audio</label>
-        <input type="file" name="audio" />
+        <label for="">שפה</label>
+        <select name="lang" id="lang">
+            <option value="he">עברית</option>
+            <option value="am">אמהרית</option>
+            <option value="en">אנגלית</option>
+            <option value="ru">רוסית</option>
+            <option value="ar">ערבית</option>
+            <option value="te">טיגרית</option>
+        </select>
+        <label for="">טווח גילאים</label>
+        <select name="age" id="age">
+            <option value="15-23">15-23</option>
+            <option value="24-40">24-40</option>
+            <option value="41-65">41-65</option>
+        </select>
+        <label for="">קטגוריה</label>
+        <select name="category" id="category">
+            <option value="גוף האשה">
+                גוף האשה
+            </option>
+            <option value="שיחה">
+               שיחה
+            </option>
+            <option value="אמצעי מניעה">
+                אמצעי מניעה
+            </option>
+        </select>
+        <label for="">קובץ שמע</label>
+        <input type="file" name="audio" accept="audio/*" />
         <button type="submit">upload</button>
     </form>
 </body>
