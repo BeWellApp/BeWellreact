@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const contentSchema = new Schema({
-    title: { type: String, required: true },
+    title: { type: String, required: false },
     category: { type: String, required: true },
     lang: {
         type: String,
