@@ -21,7 +21,7 @@ function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="close">
-        <Drawer.Screen name="FeSelectAge" component={SelectAge} />
+        <Drawer.Screen name="SelectAge" component={SelectAge} />
         <Drawer.Screen name="SelectLan" component={SelectLan} />
         <Drawer.Screen name="close" component={MyStack} />
       </Drawer.Navigator>
