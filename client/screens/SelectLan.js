@@ -29,7 +29,6 @@ export default function SelectLan({ navigation }) {
                 <View style={styles.rowContainer}><PlayButton audio={RussianRecording} /><View style={styles.button}><Button  title='Rрусский' onPress={clickHandler} /></View></View>
                 <View style={styles.rowContainer}><PlayButton audio={EnglishRecording} /><View style={styles.button}><Button  title='English' onPress={clickHandler} /></View></View>
             </View>
-
             <View style={{
                 display: "flex",
                 flexDirection: "row"
@@ -37,7 +36,6 @@ export default function SelectLan({ navigation }) {
                 <View style={{
                     flex: 1
                 }}>
-
                     <Button title='<' disabled={boolState} onPress={() => { navigation.navigate("Welcome") }}
                         style={{
                             backgroundColor: "#FE434C",
@@ -46,12 +44,9 @@ export default function SelectLan({ navigation }) {
                             width: 250
                         }}
                         textStyle={{ color: "#FFFFFF", fontSize: 100, fontWeight: '400' }} />
-
                 </View><View style={{
                     flex: 1
                 }}>
-
-
                 </View>
             </View>
         </View>
