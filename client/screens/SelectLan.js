@@ -11,9 +11,32 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function SelectLan({ navigation }) {
     const [boolState, setState] = useState(true);
+    const [selectedValue, setSelectedValue] = useState(null);
 
-    const clickHandler = () => {
+    const clickHandler = (event) => {
         setState(false);
+        switch (event.target.innerText) {
+            case 'עברית':
+                setSelectedValue('he')
+                break;
+            case 'አማርኛ':
+                setSelectedValue('he')
+                break;
+            case 'עברית':
+                setSelectedValue('he')
+                break;
+            case 'עברית':
+                setSelectedValue('he')
+                break;
+            case 'עברית':
+                setSelectedValue('he')
+                break;
+            case 'English':
+                setSelectedValue('he')
+                break;
+            default:
+                break;
+        }
     }
 
     return (
@@ -21,12 +44,12 @@ export default function SelectLan({ navigation }) {
         <SafeAreaView style={styles.mainContainer}>
             <Text style={styles.boldText}> באיזו שפה תרצי לקבל מידע ?</Text>
             <View style={styles.buttonContainer}>
-                <View style={styles.rowContainer}><PlayButton audio={HebrewRecording} /><View style={styles.button}><Button  title='עברית' onPress={clickHandler} /></View></View>
-                <View style={styles.rowContainer}><PlayButton audio={AmharicRecording} /><View style={styles.button}><Button  title='አማርኛ' onPress={clickHandler} /></View></View>
-                <View style={styles.rowContainer}><PlayButton audio={TigreniaRecording} /><View style={styles.button}><Button  title='ትግርኛ' onPress={clickHandler} /></View></View>
-                <View style={styles.rowContainer}><PlayButton audio={ArabicRecording} /><View style={styles.button}><Button  title='عربيه' onPress={clickHandler} /></View></View>
-                <View style={styles.rowContainer}><PlayButton audio={RussianRecording} /><View style={styles.button}><Button  title='Rрусский' onPress={clickHandler} /></View></View>
-                <View style={styles.rowContainer}><PlayButton audio={EnglishRecording} /><View style={styles.button}><Button  title='English' onPress={clickHandler} /></View></View>
+                <View style={styles.rowContainer}><PlayButton audio={HebrewRecording} /><View style={styles.button}><Button title='עברית' onPress={clickHandler} /></View></View>
+                <View style={styles.rowContainer}><PlayButton audio={AmharicRecording} /><View style={styles.button}><Button title='አማርኛ' onPress={clickHandler} /></View></View>
+                <View style={styles.rowContainer}><PlayButton audio={TigreniaRecording} /><View style={styles.button}><Button title='ትግርኛ' onPress={clickHandler} /></View></View>
+                <View style={styles.rowContainer}><PlayButton audio={ArabicRecording} /><View style={styles.button}><Button title='عربيه' onPress={clickHandler} /></View></View>
+                <View style={styles.rowContainer}><PlayButton audio={RussianRecording} /><View style={styles.button}><Button title='Rрусский' onPress={clickHandler} /></View></View>
+                <View style={styles.rowContainer}><PlayButton audio={EnglishRecording} /><View style={styles.button}><Button title='English' onPress={clickHandler} /></View></View>
             </View>
             <View style={{
                 display: "flex",
@@ -35,7 +58,7 @@ export default function SelectLan({ navigation }) {
                 <View style={{
                     flex: 1
                 }}>
-                    <Button title='<' disabled={boolState} onPress={() => { navigation.navigate("Welcome") }}
+                    <Button title='<' disabled={boolState} onPress={() => { navigation.navigate("Welcome", {selectedAge: selectedValue}) }}
                         style={{
                             backgroundColor: "#FE434C",
                             borderColor: "transparent",
@@ -54,10 +77,9 @@ export default function SelectLan({ navigation }) {
 
 const styles = StyleSheet.create({
     mainContainer: {
-        alignItems:'center',
-        justifyContent:'center',
-        flex:1,
-        backgroundColor: '#fffff2'
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1
     },
     boldText: {
         fontWeight: 'bold',
@@ -65,14 +87,14 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     button: {
-        flex:1,
-        marginLeft:20
+        flex: 1,
+        marginLeft: 20
     },
     buttonContainer: {
-        marginVertical:20
+        marginVertical: 20
     },
     rowContainer: {
-        marginVertical:10,
+        marginVertical: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignContent: 'center',
