@@ -3,7 +3,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { Audio } from 'expo-av';
 import sample from '../assets/sounds/bach_gavotte_short.mp3';
 
-export default function PlayButton({ audio = sample }) {
+export default function PlayButton({ audio = sample, color = "black" }) {
     const [isPlaying, setIsPlaying] = useState(false);
     
     const soundObject = useMemo(() => {
@@ -66,7 +66,7 @@ export default function PlayButton({ audio = sample }) {
 
     return (
         isPlaying ?
-            <AntDesign name="pausecircle" size={34} color="black" onPress={handlePausePressed} /> :
-            <AntDesign name="play" size={34} color="black" onPress={handlePlayPressed} />
+            <AntDesign name="pausecircle" size={34} color={color} onPress={handlePausePressed} /> :
+            <AntDesign name="play" size={34} color={color} onPress={handlePlayPressed} />
     )
 }
